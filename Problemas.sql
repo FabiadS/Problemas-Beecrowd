@@ -79,3 +79,21 @@ from customers
 select p.name, providers.name
 from products as p, providers
 where providers.id = p.id_providers and providers.name = 'Ajax SA'
+
+--O setor de importação da nossa empresa precisa de um relatório sobre a importação de produtos do nosso fornecedor Sansul.
+--Sua tarefa é exibir o nome dos produtos, o nome do fornecedor e o nome da categoria, para os produtos fornecidos pelo fornecedor ‘Sansul SA’ e cujo nome da categoria seja 'Imported'.
+select products.name, providers.name, categories.name
+from products, providers, categories
+where products.id_providers = providers.id and products.id_categories = categories.id and providers.name = 'Sansul SA' and categories.name = 'Imported'
+
+--A nossa empresa está querendo fazer um novo contrato para o fornecimento de novos produtos superluxuosos, e para isso precisamos de alguns dados dos nossos produtos.
+--Seu trabalho é exibir o nome dos produtos, nome dos fornecedores e o preço, para os produtos cujo preço seja maior que 1000 e sua categoria seja ‘Super Luxury.
+select p.name, f.name, p.price
+from products as p, providers as f, categories
+where p.id_providers = f.id and p.id_categories = categories.id
+and p.price > 1000 and categories.name = 'Super Luxury'
+
+--A auditoria financeira da empresa está pedindo para nós um relatório do primeiro semestre de 2016. Então exiba o nome dos clientes e o número do pedido para os clientes que fizeram pedidos no primeiro semestre de 2016.
+select cli.name, orders.id
+from customers as cli, orders
+where cli.id = orders.id_customers and orders.orders_date between '2016-01-01' and '2016-06-30'

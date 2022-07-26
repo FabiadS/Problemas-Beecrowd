@@ -117,3 +117,8 @@ from products, categories
 where products.id_categories = categories.id and 
 products.amount > 100 and categories.id in (1,2,3,6,9)
 order by categories.id asc
+
+--A diretoria da empresa pediu para você um relatório simples de quantas cidades a empresa já alcançou.
+--Para fazer isso você deve exibir a quantidade de cidades distintas da tabela clientes.
+select count(distinct customers.city) 
+from customers

@@ -7,15 +7,15 @@ int main()
 
   scanf("%f %f %f", &A, &B, &C);
 
-  if ((A + B > C) and (A + C > B) and (B + C > A))
+  if ((A + B > C) && (A + C > B) && (B + C > A))
   {
     perimetro = A + B + C;
-    printf("Perimetro = %.1f", perimetro);
+    printf("Perimetro = %.1f\n", perimetro);
   }
   else
   {
     area = ((A + B) * C) / 2;
-    printf("Area = %.1f", area);
+    printf("Area = %.1f\n", area);
   }
 
   return 0;

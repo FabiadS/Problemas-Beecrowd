@@ -128,6 +128,13 @@ order by categories.id asc
 select count(distinct customers.city) 
 from customers
 
---O diretor da Mangojata Advogados ordenou que lhe fosse entregue um relatório sobre seus advogados atuais.
---O diretor quer que você mostre para ele o nome do advogado que têm mais clientes, o nome do advogado que tem menos clientes e a média de clientes entre todos os advogados.
---OBS: Antes de apresentar a média mostre um campo chamado Average a fim de deixar o relatório mais apresentável. A média deverá ser apresentada em inteiros.
+/* 
+A locadora pretende fazer uma promoção para os clientes que ainda não fizeram nenhuma locação.
+Seu trabalho é nos entregar o ID e o nome dos clientes que não realizaram nenhuma locação. Ordene a saída por ID.*/
+
+select customers.id, customers.name
+from customers
+where customers.id NOT IN (select locations.id_customers
+from locations
+where locations.id_customers = customers.id)
+
